@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1440" />
+    <title>Car Watch</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <nav id="nav-root" aria-label="Watches" class="watch-nav"></nav>
+      <div class="page">
+        <main id="app" class="app">
+          <p class="placeholder">Loading&hellip;</p>
+        </main>
+      </div>
+    </div>
+
+    <!-- Requirement 004: the remove-trim confirmation dialog. Static and
+         shared across every car detail render (public/app.js populates it
+         via .textContent, never innerHTML, right before opening it) — a
+         real <dialog>, so Escape and a backdrop click both cancel for
+         free via the platform's own behaviour; public/app.js only adds
+         the backdrop-click listener since <dialog> doesn't do that part
+         itself. -->
+    <dialog id="remove-trim-dialog" class="remove-trim-dialog" aria-labelledby="remove-trim-title">
+      <div class="remove-trim-content">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="remove-trim-icon"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        <div class="remove-trim-text">
+          <h1 id="remove-trim-title" class="remove-trim-title"></h1>
+          <p class="remove-trim-lede"></p>
+        </div>
+      </div>
+      <div class="remove-trim-counts"></div>
+      <p class="remove-trim-note"></p>
+      <div class="remove-trim-error" data-error-for="form"></div>
+      <div class="remove-trim-actions">
+        <button type="button" class="remove-trim-keep">Keep it</button>
+        <button type="button" class="remove-trim-confirm">Remove trim</button>
+      </div>
+    </dialog>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

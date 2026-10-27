@@ -1,0 +1,16 @@
+{
+  "name": "car-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local screen for tracking car price quotes over time and incentive deadlines, backed by a hand-edited data file. No network access.",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
